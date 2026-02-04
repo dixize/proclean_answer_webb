@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO CLEANING — Professional Service</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;600;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-inner">
+            <div class="logo" onclick="showPage('home')">
+                <span class="logo-accent">PRO</span> CLEANING
+            </div>
+            <nav class="nav-menu">
+                <button onclick="showPage('home')">Главная</button>
+                <button onclick="showPage('prices')">Услуги</button>
+                <button onclick="showPage('contacts')">Контакты</button>
+                <button onclick="showPage('reviews-page')">Отзывы</button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="page-home" class="page active">
+        <section class="hero-section">
+            <div class="hero-bg-anim"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="status-pill">● SYSTEM ONLINE: EKATERINBURG</div>
+                    <h1>PRO <span class="orange-text">CLEANING</span></h1>
+                    <p class="hero-sub">Премиальный клининг и уход за вашим пространством. Гарантия чистоты 100%. Инновационные методы и экологичные средства.</p>
+                    <button class="btn-mega-orange" onclick="showPage('prices')">УЗНАТЬ ЦЕНЫ</button>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item"><span>15k+</span>Уборок</div>
+                        <div class="stat-item"><span>24/7</span>Поддержка</div>
+                        <div class="stat-item"><span>100%</span>Качество</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main id="page-prices" class="page">
+        <section class="container">
+            <h2 class="title-l">КАТАЛОГ УСЛУГ</h2>
+            <div class="price-grid">
+                <div class="price-item neon-border" onclick="openOrderModal('Cleaning', 'Кол-во комнат')">
+                    <div class="price-header">Cleaning</div>
+                    <div class="price-body">
+                        <div class="row"><span>Поддерживающая</span> <b>от 2 500 ₽</b></div>
+                        <div class="row"><span>Генеральная</span> <b>от 5 000 ₽</b></div>
+                        <button class="btn-order">ЗАКАЗАТЬ</button>
+                    </div>
+                </div>
+                <div class="price-item neon-border" onclick="openOrderModal('Cleaning+', 'Тип сложности / Ремонт')">
+                    <div class="price-header">Cleaning+</div>
+                    <div class="price-body">
+                        <div class="row"><span>После ремонта</span> <b>от 8 000 ₽</b></div>
+                        <div class="row"><span>После событий</span> <b>от 7 000 ₽</b></div>
+                        <button class="btn-order">ЗАКАЗАТЬ</button>
+                    </div>
+                </div>
+                <div class="price-item neon-border" onclick="openOrderModal('Zoo-cleaning', 'Вид питомца / Особенности')">
+                    <div class="price-header">Zoo-cleaning</div>
+                    <div class="price-body">
+                        <div class="row"><span>Удаление шерсти</span> <b>от 3 500 ₽</b></div>
+                        <div class="row"><span>Удаление запахов</span> <b>от 4 000 ₽</b></div>
+                        <button class="btn-order">ЗАКАЗАТЬ</button>
+                    </div>
+                </div>
+                <div class="price-item neon-border" onclick="openOrderModal('Car-cleaning', 'Марка авто / Тип салона')">
+                    <div class="price-header">Car-cleaning</div>
+                    <div class="price-body">
+                        <div class="row"><span>Химчистка салона</span> <b>от 6 000 ₽</b></div>
+                        <div class="row"><span>Комплекс</span> <b>от 9 000 ₽</b></div>
+                        <button class="btn-order">ЗАКАЗАТЬ</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section-footer-logo">PRO CLEANING // FUTURE OF HYGIENE</div>
+        </section>
+    </main>
+
+    <main id="page-reviews-page" class="page">
+        <section class="container">
+            <h2 class="title-l">СИСТЕМА ОТЗЫВОВ</h2>
+            <div class="reviews-slider-outer">
+                <div class="reviews-track top-track" id="track-1"></div>
+                <div class="reviews-track bottom-track" id="track-2"></div>
+            </div>
+            <div class="reviews-footer-logo">
+                <span class="logo-accent">PRO</span> CLEANING <span class="footer-tag">TRUST SYSTEM</span>
+            </div>
+        </section>
+    </main>
+
+    <main id="page-contacts" class="page">
+        <section class="container">
+            <div class="contact-card">
+                <h2>ЦИФРОВОЙ КОНТАКТ-ЦЕНТР</h2>
+                
+                <div class="phone-wrapper">
+                    <div class="phone-label">DIRECT LINE</div>
+                    <div class="phone-display-bold">+7 (777) 777-77-77</div>
+                </div>
+
+                <div class="messenger-grid">
+                    <a href="https://wa.me/77777777777" target="_blank" class="mess-box wa-box">
+                        <div class="mess-icon-mini">WA</div>
+                        <div class="mess-info">
+                            <span class="m-label-small">WhatsApp</span>
+                            <span class="m-link-small">wa.me/pro_cleaning</span>
+                        </div>
+                    </a>
+                    <a href="https://t.me/procleaning_ekb" target="_blank" class="mess-box tg-box">
+                        <div class="mess-icon-mini">TG</div>
+                        <div class="mess-info">
+                            <span class="m-label-small">Telegram</span>
+                            <span class="m-link-small">@procleaning_ekb</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="contact-footer-logo">
+                    <span class="logo-accent">PRO</span> CLEANING // <span>EST. 2024</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-content">
+            <button class="modal-x" onclick="closeOrderModal()">×</button>
+            <div id="order-form-step">
+                <h3>ПАРАМЕТРЫ ЗАЯВКИ</h3>
+                <p id="selected-service-name" class="orange-text"></p>
+                <div class="input-group">
+                    <input type="text" id="dynamic-detail" class="m-input">
+                    <input type="text" id="area" placeholder="Площадь м²" class="m-input">
+                    <input type="datetime-local" id="time" class="m-input">
+                    <input type="tel" id="phone" placeholder="Ваш телефон" class="m-input">
+                </div>
+                <button class="btn-confirm" onclick="submitFinalOrder()">ПОДТВЕРДИТЬ</button>
+            </div>
+            <div id="order-success-step" style="display:none">
+                <h2 class="neon-green-text">СИСТЕМА: ЗАЯВКА ПРИНЯТА</h2>
+                <p>Менеджер свяжется с вами для уточнения деталей.</p>
+                <div class="success-logo">PRO CLEANING</div>
+                <button class="btn-confirm" onclick="closeOrderModal()">ОК</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
