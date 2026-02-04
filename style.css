@@ -1,0 +1,109 @@
+:root {
+    --black: #050505;
+    --dark: #0f0f0f;
+    --orange: #ff6600;
+    --yellow: #ffcc00;
+    --wa-green: #25d366;
+    --tg-blue: #0088cc;
+}
+
+body {
+    margin: 0; background: var(--black); color: white;
+    font-family: 'Exo 2', sans-serif; overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* NAVBAR */
+.navbar {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    background: rgba(0,0,0,0.9); backdrop-filter: blur(15px);
+    padding: 15px 0; border-bottom: 1px solid #1a1a1a;
+}
+.nav-inner { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 26px; font-weight: 900; cursor: pointer; letter-spacing: 1px; }
+.logo-accent { color: var(--orange); }
+
+.nav-menu button {
+    background: none; border: none; color: white; font-weight: 600;
+    margin: 0 12px; cursor: pointer; transition: 0.3s; text-transform: uppercase; font-size: 13px;
+}
+.nav-menu button:hover { color: var(--orange); }
+
+/* PAGES */
+.page { display: none; padding-top: 100px; min-height: 100vh; animation: fadeIn 0.4s; }
+.page.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* HERO */
+.hero-section { height: 85vh; display: flex; align-items: center; position: relative; }
+.hero-bg-anim {
+    position: absolute; width: 100%; height: 100%; top:0; left:0;
+    background: radial-gradient(circle at 20% 30%, rgba(255, 102, 0, 0.1) 0%, transparent 50%);
+}
+h1 { font-size: clamp(40px, 8vw, 80px); font-weight: 900; line-height: 0.9; margin-bottom: 20px; }
+.orange-text { color: var(--orange); text-shadow: 0 0 20px var(--orange); }
+.hero-sub { color: #888; margin-bottom: 40px; max-width: 500px; font-size: 18px; }
+
+.btn-mega-orange {
+    background: var(--orange); border: none; padding: 22px 50px; 
+    border-radius: 5px; font-weight: 900; cursor: pointer; color: white;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4); transition: 0.3s;
+    text-transform: uppercase; letter-spacing: 1px;
+}
+.btn-mega-orange:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--orange); }
+
+.hero-stats { display: flex; gap: 40px; margin-top: 50px; border-top: 1px solid #222; padding-top: 30px; }
+.stat-item span { display: block; font-size: 24px; font-weight: 900; color: var(--orange); }
+.stat-item { font-size: 11px; text-transform: uppercase; color: #555; }
+
+/* PRICES */
+.price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; padding: 40px 0; }
+.price-item { background: var(--dark); padding: 30px; border-radius: 12px; border: 1px solid var(--orange); transition: 0.3s; cursor: pointer; }
+.price-item:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(255,102,0,0.2); }
+.price-header { font-size: 22px; color: var(--orange); font-weight: 900; margin-bottom: 20px; }
+.row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #1a1a1a; font-size: 14px; }
+.btn-order { width: 100%; padding: 12px; margin-top: 20px; background: transparent; border: 1px solid #444; color: white; border-radius: 8px; cursor: pointer; }
+
+/* REVIEWS SLIDER */
+.reviews-slider-outer { display: flex; flex-direction: column; gap: 20px; overflow: hidden; padding: 30px 0; }
+.reviews-track { display: flex; gap: 20px; width: max-content; }
+.top-track { animation: scrollLeft 60s linear infinite; }
+.bottom-track { animation: scrollRight 60s linear infinite; }
+@keyframes scrollLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes scrollRight { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+.rev-card { width: 320px; background: var(--dark); padding: 25px; border-radius: 12px; border-top: 2px solid var(--orange); flex-shrink: 0; }
+
+/* CONTACTS С НОВЫМ НОМЕРОМ */
+.phone-wrapper {
+    background: var(--orange);
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 0 25px rgba(255, 102, 0, 0.3);
+}
+.phone-label { font-size: 10px; font-weight: 900; letter-spacing: 3px; margin-bottom: 5px; opacity: 0.8; }
+.phone-display-bold { font-size: clamp(24px, 5vw, 42px); font-weight: 900; }
+
+.messenger-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.mess-box { display: flex; align-items: center; padding: 18px; border-radius: 10px; text-decoration: none; border: 1px solid #222; transition: 0.3s; color: white;}
+.wa-box:hover { border-color: var(--wa-green); color: var(--wa-green); box-shadow: inset 0 0 10px rgba(37, 211, 102, 0.1); }
+.tg-box:hover { border-color: var(--tg-blue); color: var(--tg-blue); box-shadow: inset 0 0 10px rgba(0, 136, 204, 0.1); }
+.mess-icon-mini { font-weight: 900; margin-right: 15px; font-size: 20px; }
+.m-label-small { font-weight: 900; font-size: 14px; display: block; }
+.m-link-small { font-size: 11px; opacity: 0.5; }
+
+.section-footer-logo, .contact-footer-logo { text-align: center; margin-top: 40px; font-weight: 900; font-size: 24px; color: white; opacity: 0.9; letter-spacing: 2px; }
+
+/* MODAL */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; z-index: 2000; }
+.modal-content { background: #080808; padding: 40px; border: 1px solid var(--orange); border-radius: 15px; width: 380px; position: relative; text-align: center; }
+.modal-x { position: absolute; top: 15px; right: 20px; background: none; border: none; color: white; font-size: 26px; cursor: pointer; opacity: 0.5; }
+.input-group { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+.m-input { width: 100%; padding: 15px; background: #111; border: 1px solid #222; color: white; border-radius: 8px; box-sizing: border-box; }
+.btn-confirm { width: 100%; padding: 16px; background: var(--orange); border: none; font-weight: 900; border-radius: 10px; cursor: pointer; color: black; transition: 0.3s; }
+.btn-confirm:hover { background: var(--yellow); }
+.neon-green-text { color: var(--wa-green); text-shadow: 0 0 15px var(--wa-green); }
+.success-logo { font-weight: 900; margin: 15px 0; font-size: 20px; color: var(--orange); }
